@@ -36,6 +36,9 @@ class MainActivity : AppCompatActivity() {
         btn_call_log.setOnClickListener(){
             open_call_log();
         }
+        btn_gallery.setOnClickListener(){
+            open_gallery();
+        }
     }
     fun open_browser(url:String){
     Intent(Intent.ACTION_VIEW, Uri.parse(url)).also { startActivity(it) }
@@ -50,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent);
     }
     fun open_gallery(){
-
+        Intent(Intent.ACTION_PICK).setType("image/*").also { startActivity(it) };
     }
     fun open_camera(){
     var intent=Intent(MediaStore.ACTION_IMAGE_CAPTURE);
